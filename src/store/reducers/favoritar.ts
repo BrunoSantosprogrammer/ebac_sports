@@ -17,7 +17,7 @@ const favoritosSlice = createSlice({
     favoritar: (state, action: PayloadAction<Produto>) => {
       const produtoNovo = action.payload
       const favoritos = state.favoritos
-      if (favoritos.some((p) => p.id === produtoNovo.id)) {
+      if (favoritos.find((p) => p.id === produtoNovo.id)) {
         const favoritosSemOProdutoNovo = favoritos.filter(
           (p) => p.id !== produtoNovo.id
         )
